@@ -1,0 +1,7 @@
+PASS: counters, outputs and fingerprints match in all 430 repeated samples.
+PASS: 430 samples / 86 cases, five runs each, positive times, valid sizes and counters.
+PASS: Maven Wrapper clean verify completed successfully (local dependency cache override).
+PASS: JUnit 5: {'tests': 244, 'failures': 0, 'errors': 0, 'skipped': 0}
+PASS: REPORT.pdf has exactly four pages; all four pages visually inspected.
+PASS: Four PNG plots visually inspected, including logarithmic axes and readable units.
+PASS: Packaged JAR demo returns matching ED values and overlapping search indices.
