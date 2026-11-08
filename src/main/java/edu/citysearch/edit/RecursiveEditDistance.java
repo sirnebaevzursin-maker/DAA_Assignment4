@@ -7,9 +7,6 @@ import java.util.Objects;
 public final class RecursiveEditDistance implements EditDistance {
     private final Counters counts = new Counters();
 
-    // State: D(i,j) is the distance between prefixes a[0..i) and b[0..j).
-    // Transition: equal last characters -> D(i-1,j-1); else 1+min(D(i-1,j),D(i,j-1),D(i-1,j-1)).
-    // Base: D(0,j)=j and D(i,0)=i; direct recursion, with no cache or memoization.
     @Override public int distance(String a, String b) {
         Objects.requireNonNull(a, "a"); Objects.requireNonNull(b, "b");
         counts.reset();
