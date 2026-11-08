@@ -1,6 +1,5 @@
 package edu.citysearch.metrics;
 
-/** Reset at each public algorithm call. Algorithm instances are not thread-safe. */
 public final class Counters {
     private long calls, cells, comparisons, lpsComparisons, ints, depth;
     public void reset() { calls = cells = comparisons = lpsComparisons = ints = depth = 0; }

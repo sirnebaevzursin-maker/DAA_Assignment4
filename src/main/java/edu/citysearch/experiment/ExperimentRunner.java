@@ -9,7 +9,6 @@ import java.nio.file.*;
 import java.util.*;
 import java.util.function.*;
 
-/** Five samples per case, each normalized over a >=20 ms batch after three warm-ups. */
 public final class ExperimentRunner {
     public static final int[] SMALL_ED = {2, 4, 6, 8, 10, 12};
     public static final int[] LARGE_ED = {64, 128, 256, 512, 1024};
@@ -57,7 +56,6 @@ public final class ExperimentRunner {
             measure(csv, "search", algorithm.name(), type, n, m, input, expectedMatches.size(),
                     () -> {
                         List<Integer> matches = algorithm.search(input.first(), input.second());
-                        // Consume the output as well as its length to keep observable results.
                         blackhole ^= matches.hashCode();
                         return matches.size();
                     }, algorithm::measurements);

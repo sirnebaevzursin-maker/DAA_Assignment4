@@ -9,7 +9,6 @@ import java.util.Objects;
 public final class KmpSearch implements StringSearch {
     private final Counters counts = new Counters();
 
-    /** lps[i] is the longest proper prefix of p[0..i] that is also its suffix. */
     public int[] lps(String p) {
         Objects.requireNonNull(p, "pattern");
         counts.reset();
@@ -46,10 +45,10 @@ public final class KmpSearch implements StringSearch {
                 i++; j++;
                 if (j == pattern.length()) {
                     matches.add(i - j);
-                    j = lps[j - 1]; // Retain the border: overlapping matches remain possible.
+                    j = lps[j - 1];
                 }
             } else if (j > 0) {
-                j = lps[j - 1]; // Reuse the matched prefix; i never decreases.
+                j = lps[j - 1];
             } else {
                 i++;
             }

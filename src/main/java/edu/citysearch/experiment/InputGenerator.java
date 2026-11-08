@@ -6,7 +6,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HexFormat;
 
-/** A specified xorshift64* PRNG, independent of JDK Random implementation details. */
 public final class InputGenerator {
     public static final long SEED = 20261103L;
     private long state;
